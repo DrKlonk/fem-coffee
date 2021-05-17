@@ -6,8 +6,8 @@ import CreatePlan from "@/pages/CreatePlan.vue";
 
 const routes = [
   { path: "/", name: "Home", component: Home },
-  { path: "/about", component: AboutUs },
-  { path: "/createPlan", component: CreatePlan },
+  { path: "/about", name: "About", component: AboutUs },
+  { path: "/create-plan", name: "CreatePlan", component: CreatePlan },
 ];
 
 const router = createRouter({

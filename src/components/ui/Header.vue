@@ -13,4 +13,9 @@ export default {
   components: { Logo, Menu },
 };
 </script>
-<style lang="scss"></style>
+<style>
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+</style>
