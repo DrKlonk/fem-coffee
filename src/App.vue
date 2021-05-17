@@ -1,14 +1,14 @@
 <template>
-  <Menu />
+  <Header />
 </template>
 
 <script>
-import Menu from "./components/ui/Menu";
+import Header from "./components/ui/Header";
 
 export default {
   name: "App",
   components: {
-    Menu,
+    Header,
   },
 };
 </script>
