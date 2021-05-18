@@ -86,5 +86,6 @@ export default {
 .router-link {
   color: $color-dark-grey-blue;
   text-decoration: none;
+  padding: 1rem;
 }
 </style>
