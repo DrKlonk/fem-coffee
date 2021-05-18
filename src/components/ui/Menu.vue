@@ -9,6 +9,11 @@
 <script>
 export default {
   name: "Menu",
+  props: {
+    collapsed: {
+      type: Boolean,
+    },
+  },
 };
 </script>
 

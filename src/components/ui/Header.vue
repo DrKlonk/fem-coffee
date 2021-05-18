@@ -4,6 +4,7 @@
     <Menu />
   </header>
 </template>
+
 <script>
 import Logo from "./Logo";
 import Menu from "./Menu.vue";
@@ -13,9 +14,11 @@ export default {
   components: { Logo, Menu },
 };
 </script>
-<style>
+
+<style scoped>
 .header {
   display: flex;
   justify-content: space-between;
+  padding: 1rem 0 2rem 0;
 }
 </style>

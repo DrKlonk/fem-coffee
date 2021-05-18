@@ -1,3 +1,16 @@
+html {
+  box-sizing: border-box;
+  padding: 1rem;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
 h1 {
   font-family: Fraunces;
   font-size: 4.5rem;
@@ -5,4 +18,8 @@ h1 {
 
 h1.title-alternate {
   font-size: 9.375rem;
+}
+
+p {
+  font-family: Barlow, Arial, Helvetica, sans-serif;
 }
