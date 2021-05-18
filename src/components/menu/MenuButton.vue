@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import { store, mutations } from "../../store/store.js"
+import { store, mutations } from "@/store/store.js"
 export default {
   name: "MenuButton",
   computed: {
