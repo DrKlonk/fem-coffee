@@ -43,7 +43,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .slide-enter-active,
 .slide-leave-active {
   transition: transform 0.2s ease;
@@ -67,7 +67,7 @@ export default {
 
 .sidebar-panel {
   overflow-y: auto;
-  background-color: white;
+  background-color: $color-light-cream;
   position: fixed;
   left: 0;
   top: 0;
@@ -75,5 +75,23 @@ export default {
   z-index: 999;
   padding: 3rem 20px 2rem 20px;
   width: 300px;
+
+  &-nav {
+    list-style: none;
+    text-align: center;
+    font-family: "Fraunces";
+    font-size: 1.2rem;
+
+    &__item {
+      &:not(:last-child) {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+}
+
+.router-link {
+  color: $color-dark-grey-blue;
+  text-decoration: none;
 }
 </style>
