@@ -11,13 +11,22 @@ html {
   box-sizing: inherit;
 }
 
+h1,
+h2,
+h3 {
+  font-family: Fraunces, Georgia, "Times New Roman", Times, serif;
+}
+
 h1 {
-  font-family: Fraunces;
   font-size: 4.5rem;
 }
 
-h1.title-alternate {
-  font-size: 9.375rem;
+h2 {
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 2rem;
 }
 
 p {
