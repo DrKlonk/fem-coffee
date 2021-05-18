@@ -7,7 +7,7 @@
 
 <script>
 import Logo from "./Logo";
-import Menu from "./Menu.vue";
+import Menu from "../menu/MenuButton.vue";
 
 export default {
   name: "Header",

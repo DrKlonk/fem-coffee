@@ -6,15 +6,4 @@
   </nav>
 </template>
 
-<script>
-export default {
-  name: "Menu",
-  props: {
-    collapsed: {
-      type: Boolean,
-    },
-  },
-};
-</script>
-
 <style scoped></style>
