@@ -4,9 +4,9 @@ module.exports = {
       sass: {
         additionalData: `
               @import "@/scss/main.scss";
-              @import "@/scss/_variables.scss";
+              @import "@/scss/variables.scss";
             `,
       },
     },
   },
-};
+}

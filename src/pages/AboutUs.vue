@@ -7,7 +7,6 @@
       door, at your schedule.</template
     >
   </HeroImage>
-  <h1>Home</h1>
 </template>
 
 <script>

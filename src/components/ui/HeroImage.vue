@@ -1,13 +1,25 @@
 <template>
-  <div class="hero-image" :class="imgClass">
+  <section class="hero-image" :class="imgClass">
     <h1 class="hero-image__heading"><slot name="heading"></slot></h1>
-    <p class="hero-image__paragraph"><slot name="text"></slot></p>
-  </div>
+    <p
+      class="hero-image__paragraph"
+      :class="{ 'm-bottom-medium': hasButtonSlot }"
+    >
+      <slot name="text"></slot>
+    </p>
+    <slot name="button"></slot>
+  </section>
 </template>
 <script>
 export default {
+  name: "HeroImage",
   props: {
     imgClass: String,
+  },
+  computed: {
+    hasButtonSlot() {
+      return !!this.$slots.button
+    },
   },
 }
 </script>
