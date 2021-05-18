@@ -30,14 +30,17 @@
 </template>
 
 <script>
+import { store, mutations } from "@/store/store"
 export default {
   name: "Sidebar",
-  data: () => ({
-    isPanelOpen: true,
-  }),
+  computed: {
+    isPanelOpen() {
+      return store.isNavOpen
+    },
+  },
   methods: {
     closeSidebarPanel() {
-      this.isPanelOpen = false
+      mutations.toggleNav()
     },
   },
 }

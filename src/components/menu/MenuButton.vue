@@ -13,16 +13,17 @@
 </template>
 
 <script>
+import { store, mutations } from "../../store/store.js"
 export default {
   name: "MenuButton",
-  data() {
-    return {
-      isBurgerActive: true,
-    }
+  computed: {
+    isBurgerActive() {
+      return store.isNavOpen
+    },
   },
   methods: {
     toggleCollapse() {
-      this.isBurgerActive = !this.isBurgerActive
+      mutations.toggleNav()
     },
   },
 }
