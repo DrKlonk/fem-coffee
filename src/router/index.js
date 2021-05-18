@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router"
-import { mutations } from "@/store/store"
+// import { mutations } from "@/store/store"
 
 import Home from "@/pages/Home.vue"
 import AboutUs from "@/pages/AboutUs.vue"
@@ -17,7 +17,7 @@ const router = createRouter({
 })
 
 router.beforeEach(() => {
-  mutations.closeNav()
+  // mutations.closeNav()
 })
 
 export default router

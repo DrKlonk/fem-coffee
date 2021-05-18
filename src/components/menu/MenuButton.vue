@@ -29,7 +29,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .burger-button {
   position: relative;
   background-color: transparent;
@@ -40,7 +40,7 @@ export default {
   cursor: pointer;
 }
 .burger-bar {
-  background-color: #130f40;
+  background-color: $color-dark-grey-blue;
   position: absolute;
   top: 50%;
   right: 6px;
@@ -80,7 +80,7 @@ export default {
 }
 
 #burger.active .burger-bar {
-  background-color: #ccc;
+  background-color: $color-dark-grey-blue;
 }
 
 #burger.active .burger-bar--1 {

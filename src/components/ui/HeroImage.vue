@@ -1,5 +1,5 @@
 <template>
-  <div class="hero-image">
+  <div class="hero-image" :class="imgClass">
     <h1 class="hero-image__heading"><slot name="heading"></slot></h1>
     <p class="hero-image__paragraph"><slot name="text"></slot></p>
   </div>
@@ -7,25 +7,23 @@
 <script>
 export default {
   props: {
-    img: String,
+    imgClass: String,
   },
-  methods: {
-    backgroundImage() {
-      //   return {
-      //     "background-image": "",
-      //   };
-      return {
-        "background-image": "url(" + require(`@/assets/${this.img}`) + ")",
-      };
-    },
-  },
-};
+}
 </script>
 <style lang="scss" scoped>
+.home {
+  background-image: url("~@/assets/home/mobile/image-hero-coffeepress.jpg");
+}
+.about {
+  background-image: url("~@/assets/about/mobile/image-hero-whitecup.jpg");
+}
+.create-plan {
+  background-image: url("~@/assets/plan/mobile/image-hero-blackcup.jpg");
+}
 .hero-image {
   border-radius: 1rem;
   padding: 4rem 1.5rem;
-  background-image: url("~@/assets/home/mobile/image-hero-coffeepress.jpg");
   background-size: cover;
   color: $color-light-cream;
   text-align: center;

@@ -1,5 +1,5 @@
 <template>
-  <HeroImage img="home/desktop/image-piccollo.png">
+  <HeroImage img-class="home">
     <template v-slot:heading>Great coffee made simple.</template>
     <template v-slot:text
       >Start your mornings with the world’s best coffees. Try our expertly
@@ -11,13 +11,13 @@
 </template>
 
 <script>
-import HeroImage from "@/components/ui/HeroImage";
+import HeroImage from "@/components/ui/HeroImage"
 export default {
   name: "Home",
   components: {
     HeroImage,
   },
-};
+}
 </script>
 
 <style></style>
