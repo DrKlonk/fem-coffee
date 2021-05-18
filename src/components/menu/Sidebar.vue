@@ -67,14 +67,19 @@ export default {
 
 .sidebar-panel {
   overflow-y: auto;
-  background-color: $color-light-cream;
+  background-image: linear-gradient(
+    to bottom,
+    $color-light-cream,
+    $color-light-cream 300px,
+    rgba($color-light-cream, 0.5)
+  );
   position: fixed;
   left: 0;
-  top: 0;
-  height: 100vh;
+  top: 6rem;
+  height: calc(100vh - 6rem);
   z-index: 999;
   padding: 3rem 20px 2rem 20px;
-  width: 300px;
+  width: 100vw;
 
   &-nav {
     list-style: none;
