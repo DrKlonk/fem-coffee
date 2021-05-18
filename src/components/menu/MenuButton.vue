@@ -18,14 +18,14 @@ export default {
   data() {
     return {
       isBurgerActive: true,
-    };
+    }
   },
   methods: {
     toggleCollapse() {
-      this.isBurgerActive = !this.isBurgerActive;
+      this.isBurgerActive = !this.isBurgerActive
     },
   },
-};
+}
 </script>
 
 <style scoped>
@@ -79,7 +79,7 @@ export default {
 }
 
 #burger.active .burger-bar {
-  background-color: ##ccc;
+  background-color: #ccc;
 }
 
 #burger.active .burger-bar--1 {

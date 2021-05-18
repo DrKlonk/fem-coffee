@@ -1,18 +1,22 @@
 <template>
   <header class="header">
-    <Logo />
-    <Menu />
+    <img
+      class="logo"
+      alt="Coffeeroasters"
+      src="@/assets/shared/desktop/logo.svg"
+    />
+    <Menu-button />
   </header>
 </template>
 
 <script>
-import Logo from "./Logo";
-import Menu from "../menu/MenuButton.vue";
-
+import MenuButton from "@/components/menu/MenuButton.vue"
 export default {
   name: "Header",
-  components: { Logo, Menu },
-};
+  components: {
+    MenuButton,
+  },
+}
 </script>
 
 <style scoped>

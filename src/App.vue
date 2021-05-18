@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <Header />
+    <Sidebar />
     <main class="main">
       <router-view />
     </main>
@@ -8,14 +9,16 @@
 </template>
 
 <script>
-import Header from "./components/ui/Header";
+import Header from "@/components/layout/Header"
+import Sidebar from "@/components/menu/Sidebar"
 
 export default {
   name: "App",
   components: {
     Header,
+    Sidebar,
   },
-};
+}
 </script>
 
 <style lang="scss">
