@@ -59,10 +59,10 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-
   &__logo {
-    fill: white !important;
+    margin-top: 2rem;
   }
+
   &__links {
     margin-top: 3rem;
     list-style: none;
@@ -75,6 +75,7 @@ export default {
   }
   &__socials {
     margin-top: 3rem;
+    margin-bottom: 2rem;
     list-style: none;
     display: flex;
     justify-content: space-between;
@@ -85,6 +86,7 @@ export default {
   text-transform: uppercase;
   text-decoration: none;
   font-family: "Barlow";
+  font-size: 0.875rem;
   font-weight: 700;
   letter-spacing: 0.0625rem;
 
