@@ -5,16 +5,19 @@
     <main class="main">
       <router-view />
     </main>
+    <Footer />
   </div>
 </template>
 
 <script>
+import Footer from "@/components/layout/Footer"
 import Header from "@/components/layout/Header"
 import Sidebar from "@/components/menu/Sidebar"
 
 export default {
   name: "App",
   components: {
+    Footer,
     Header,
     Sidebar,
   },

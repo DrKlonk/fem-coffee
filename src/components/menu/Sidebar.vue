@@ -4,28 +4,14 @@
       <div v-if="isPanelOpen" class="sidebar-panel">
         <ul class="sidebar-panel-nav">
           <li
+            v-for="route in localRoutes"
+            :key="route.name"
             class="sidebar-panel-nav__item"
             @click.prevent="closeSidebarPanel"
           >
-            <router-link class="router-link" :to="{ name: 'Home' }"
-              >Home</router-link
-            >
-          </li>
-          <li
-            class="sidebar-panel-nav__item"
-            @click.prevent="closeSidebarPanel"
-          >
-            <router-link class="router-link" :to="{ name: 'About' }"
-              >About us</router-link
-            >
-          </li>
-          <li
-            class="sidebar-panel-nav__item"
-            @click.prevent="closeSidebarPanel"
-          >
-            <router-link class="router-link" :to="{ name: 'CreatePlan' }"
-              >Create your plan</router-link
-            >
+            <router-link class="router-link" :to="{ name: route.name }">{{
+              route.displayName
+            }}</router-link>
           </li>
         </ul>
       </div>
@@ -35,13 +21,20 @@
 
 <script>
 import { store, mutations } from "@/store/store"
+import { routes } from "@/assets/routes"
 export default {
   name: "Sidebar",
+  data() {
+    return {
+      localRoutes: routes,
+    }
+  },
   computed: {
     isPanelOpen() {
       return store.isNavOpen
     },
   },
+
   methods: {
     closeSidebarPanel() {
       mutations.toggleNav()
