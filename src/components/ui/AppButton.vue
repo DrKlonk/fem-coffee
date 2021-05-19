@@ -25,6 +25,7 @@ export default {
 
 <style lang="scss" scoped>
 .btn {
+  font-size: 1.125rem;
   outline: none;
   padding: 1rem 2rem;
   background-color: $color-cyan;

@@ -46,7 +46,9 @@
     </ul>
   </section>
 
-  <AppButton />
+  <div class="btn-wrapper">
+    <AppButton />
+  </div>
 </template>
 
 <script>
@@ -132,6 +134,8 @@ export default {
 }
 
 .how-it-works {
+  margin-top: 5rem;
+
   &__heading {
     text-align: center;
     color: $color-grey;
@@ -139,5 +143,11 @@ export default {
   &__list {
     list-style: none;
   }
+}
+
+.btn-wrapper {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
 }
 </style>
