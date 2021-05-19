@@ -26,4 +26,7 @@ export default {
   align-items: center;
   padding: 1rem 0 2rem 0;
 }
+.logo {
+  width: 10rem;
+}
 </style>
