@@ -21,10 +21,16 @@ export default {
 
 <style scoped>
 .header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 6rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 0 2rem 0;
+  padding: 1.5rem;
+  background-color: #fff;
 }
 .logo {
   width: 10rem;

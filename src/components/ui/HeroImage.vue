@@ -49,7 +49,7 @@ export default {
   &__paragraph {
     font-size: 0.9375rem;
     line-height: 1.6rem;
-    opacity: 0.8;
+    color: rgba($color-light-cream, 0.8);
   }
 }
 .test {

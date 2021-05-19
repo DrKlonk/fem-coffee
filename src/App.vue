@@ -24,4 +24,7 @@ export default {
 <style lang="scss">
 @import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Barlow&display=swap");
+.main {
+  margin-top: 6rem;
+}
 </style>
