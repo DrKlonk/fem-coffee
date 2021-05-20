@@ -46,11 +46,6 @@ export default {
   name: "CreatePlan",
   methods: {
     optionSelected(e) {
-      if (this.order[e.category] === e.value) {
-        // Deselection
-        this.order[e.category] = null
-        return
-      }
       this.order[e.category] = e.value
     },
     determineOrderSummary() {

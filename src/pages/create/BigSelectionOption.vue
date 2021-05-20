@@ -1,5 +1,5 @@
 <template>
-  <div class="option" @click="selectOption">
+  <div class="option" @click="selectOption" :class="{ selected: isSelected }">
     <h4 class="option__title">{{ option.title }}</h4>
     <p class="option__text">{{ option.text }}</p>
   </div>
@@ -12,11 +12,19 @@ export default {
       type: Object,
       required: true,
     },
+    current: {
+      type: String,
+      default: null,
+    },
   },
   methods: {
     selectOption() {
-      console.log(this.option)
       this.$emit("selected", this.option.title)
+    },
+  },
+  computed: {
+    isSelected() {
+      return this.current === this.option.title
     },
   },
 }
@@ -31,15 +39,12 @@ export default {
   border-radius: $br-small;
   padding: 1.5rem;
 
-  &:hover {
-    background-color: $color-big-selection-hover;
-  }
-  &:active {
-    background-color: $color-cyan;
-    color: $color-light-cream;
-  }
-
   &__text {
+    margin-top: 1rem;
   }
+}
+.selected {
+  background-color: $color-cyan;
+  color: $color-light-cream;
 }
 </style>

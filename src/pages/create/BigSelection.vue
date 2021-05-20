@@ -7,11 +7,13 @@
         src="@/assets/plan/desktop/icon-arrow.svg"
       />
     </header>
+
     <big-selection-option
       v-for="option in selection.options"
       :key="option"
       :option="option"
-      @selected="optionSelected"
+      :current="selectedOption"
+      @selected="emitSelectedOption"
     />
   </div>
 </template>
@@ -23,6 +25,11 @@ export default {
   components: {
     BigSelectionOption,
   },
+  data() {
+    return {
+      selectedOption: null,
+    }
+  },
   props: {
     selection: {
       type: Object,
@@ -30,7 +37,8 @@ export default {
     },
   },
   methods: {
-    optionSelected(e) {
+    emitSelectedOption(e) {
+      this.selectedOption = e
       this.$emit("optionSelected", {
         category: this.selection.category,
         value: e,
