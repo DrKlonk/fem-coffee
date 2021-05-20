@@ -8,21 +8,46 @@
     >
   </HeroImage>
   <Steps :dark-mode="true" />
+  <section class="order">
+    <big-selection
+      v-for="selection in localOrderSelections"
+      :key="selection.category"
+      :selection="selection"
+      @option-selected="optionSelected"
+    />
+  </section>
 </template>
 
 <script>
 import HeroImage from "@/components/shared/HeroImage"
 import Steps from "@/components/shared/Steps.vue"
+import { orderSelections } from "@/assets/js/plan.js"
+import BigSelection from "./BigSelection.vue"
 export default {
   data() {
     return {
-      state: {
-        test: true,
+      order: {
+        method: null,
+        type: null,
+        amount: null,
+        grind: null,
+        delivery: null,
       },
+      localOrderSelections: orderSelections,
     }
   },
-  components: { HeroImage, Steps },
+  components: { HeroImage, Steps, BigSelection },
   name: "CreatePlan",
+  methods: {
+    optionSelected(e) {
+      if (this.order[e.category] === e.value) {
+        // Deselection
+        this.order[e.category] = null
+        return
+      }
+      this.order[e.category] = e.value
+    },
+  },
 }
 </script>
 
