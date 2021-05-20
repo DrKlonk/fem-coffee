@@ -45,6 +45,10 @@
       consistent, user-friendly coffee, so that brewing is easy and enjoyable.
     </p>
   </section>
+
+  <section class="our-headquearters">
+    <h3 class="our-headquarters__heading heading-grey">Our headquarters</h3>
+  </section>
 </template>
 
 <script>

@@ -37,7 +37,7 @@
   </section>
 
   <section class="how-it-works">
-    <h3 class="how-it-works__heading">How it works</h3>
+    <h3 class="how-it-works__heading heading-grey">How it works</h3>
 
     <ul class="how-it-works__list">
       <li class="how-it-works__item" v-for="step in localSteps" :key="step">
