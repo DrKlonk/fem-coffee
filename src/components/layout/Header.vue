@@ -1,10 +1,12 @@
 <template>
   <header class="header">
-    <img
-      class="logo"
-      alt="Coffeeroasters"
-      src="@/assets/shared/desktop/logo.svg"
-    />
+    <router-link :to="{ name: 'Home' }">
+      <img
+        class="logo"
+        alt="Coffeeroasters"
+        src="@/assets/shared/desktop/logo.svg"
+      />
+    </router-link>
     <Menu-button />
   </header>
 </template>

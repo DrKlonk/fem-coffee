@@ -1,10 +1,12 @@
 <template>
   <footer class="footer">
-    <img
-      src="@/assets/shared/desktop/logo-white.svg"
-      class="footer__logo"
-      alt="Coffeeroasters"
-    />
+    <router-link :to="{ name: 'Home' }">
+      <img
+        src="@/assets/shared/desktop/logo-white.svg"
+        class="footer__logo"
+        alt="Coffeeroasters"
+      />
+    </router-link>
     <ul class="footer__links">
       <li
         v-for="route in localRoutes"
