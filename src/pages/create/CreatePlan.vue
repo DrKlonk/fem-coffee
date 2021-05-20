@@ -59,4 +59,21 @@ export default {
 .steps {
   margin-top: 6rem;
 }
+.order-summary {
+  background-color: $color-dark-grey-blue;
+  padding: 1.5rem;
+  border-radius: $br-large;
+
+  &__heading {
+    color: $color-grey;
+    text-transform: uppercase;
+    font-family: "Barlow";
+    font-size: 0.9375rem;
+  }
+  &__paragraph {
+    color: $color-light-cream;
+    font-family: "Fraunces";
+    font-size: 1.5rem;
+  }
+}
 </style>
