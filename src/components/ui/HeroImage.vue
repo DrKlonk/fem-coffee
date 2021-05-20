@@ -1,6 +1,11 @@
 <template>
   <section class="hero-image" :class="imgClass">
-    <h1 class="hero-image__heading"><slot name="heading"></slot></h1>
+    <h1
+      class="hero-image__heading"
+      :class="{ 'hero-image__heading--small': smallerHeading }"
+    >
+      <slot name="heading"></slot>
+    </h1>
     <p
       class="hero-image__paragraph"
       :class="{ 'm-bottom-medium': hasButtonSlot }"
@@ -15,6 +20,10 @@ export default {
   name: "HeroImage",
   props: {
     imgClass: String,
+    smallerHeading: {
+      type: Boolean,
+      default: false,
+    },
   },
   computed: {
     hasButtonSlot() {
@@ -44,6 +53,9 @@ export default {
     font-size: 2.5rem;
     margin-bottom: 2rem;
     line-height: 2.5rem;
+    &--small {
+      font-size: 1.75rem;
+    }
   }
 
   &__paragraph {
@@ -51,9 +63,5 @@ export default {
     line-height: 1.6rem;
     color: rgba($color-light-cream, 0.8);
   }
-}
-.test {
-  /* width: 100px;
-  height: 100px; */
 }
 </style>

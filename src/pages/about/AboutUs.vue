@@ -1,10 +1,11 @@
 <template>
-  <HeroImage img-class="about">
-    <template v-slot:heading>About us.</template>
+  <HeroImage img-class="about" smaller-heading>
+    <template v-slot:heading>About us</template>
     <template v-slot:text
-      >Start your mornings with the world’s best coffees. Try our expertly
-      curated artisan coffees from our best roasters delivered directly to your
-      door, at your schedule.</template
+      >Coffeeroasters began its journey of exotic discovery in 1999,
+      highlighting stories of coffee from around the world. We have since been
+      dedicated to bring the perfect cup - from bean to brew - in every
+      shipment.</template
     >
   </HeroImage>
 </template>
