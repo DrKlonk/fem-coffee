@@ -44,7 +44,7 @@ export default {
 }
 .hero-image {
   border-radius: 1rem;
-  padding: 4rem 1.5rem;
+  padding: 6rem 1.5rem;
   background-size: cover;
   color: $color-light-cream;
   text-align: center;
