@@ -21,7 +21,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .header {
   position: fixed;
   left: 0;
@@ -32,7 +32,7 @@ export default {
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem;
-  background-color: #fff;
+  background-color: $color-light-cream;
 }
 .logo {
   width: 10rem;
