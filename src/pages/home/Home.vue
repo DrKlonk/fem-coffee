@@ -52,12 +52,12 @@
 </template>
 
 <script>
-import HeroImage from "@/components/ui/HeroImage"
+import HeroImage from "@/components/shared/HeroImage"
 import AppButton from "@/components/ui/AppButton.vue"
 import { coffeeCollection, uniqueSellingPoints, steps } from "@/assets/content"
 import Coffee from "@/pages/home/Coffee.vue"
 import USP from "@/pages/home/USP.vue"
-import Step from "@/pages/home/Step.vue"
+import Step from "@/components/shared/Step.vue"
 
 export default {
   name: "Home",

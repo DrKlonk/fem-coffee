@@ -53,7 +53,7 @@
 </template>
 
 <script>
-import HeroImage from "@/components/ui/HeroImage.vue"
+import HeroImage from "@/components/shared/HeroImage"
 import Headquarter from "./Headquarter.vue"
 import { headquarters } from "@/assets/content.js"
 export default {

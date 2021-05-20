@@ -1,16 +1,16 @@
 <template>
   <HeroImage img-class="create-plan">
-    <template v-slot:heading>create plan.</template>
+    <template v-slot:heading>Create a plan</template>
     <template v-slot:text
-      >Start your mornings with the world’s best coffees. Try our expertly
-      curated artisan coffees from our best roasters delivered directly to your
-      door, at your schedule.</template
+      >Build a subscription plan that best fits your needs. We offer an
+      assortment of the best artisan coffees from around the globe delivered
+      fresh to your door.</template
     >
   </HeroImage>
 </template>
 
 <script>
-import HeroImage from "@/components/ui/HeroImage.vue"
+import HeroImage from "@/components/shared/HeroImage"
 export default {
   components: { HeroImage },
   name: "CreatePlan",

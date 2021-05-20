@@ -43,6 +43,7 @@ export default {
   background-image: url("~@/assets/plan/mobile/image-hero-blackcup.jpg");
 }
 .hero-image {
+  min-height: 25rem;
   border-radius: 1rem;
   padding: 6rem 1.5rem;
   background-size: cover;
