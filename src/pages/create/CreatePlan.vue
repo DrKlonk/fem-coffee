@@ -7,12 +7,21 @@
       fresh to your door.</template
     >
   </HeroImage>
+  <Steps />
 </template>
 
 <script>
 import HeroImage from "@/components/shared/HeroImage"
+import Steps from "@/components/shared/Steps.vue"
 export default {
-  components: { HeroImage },
+  data() {
+    return {
+      state: {
+        test: true,
+      },
+    }
+  },
+  components: { HeroImage, Steps },
   name: "CreatePlan",
 }
 </script>

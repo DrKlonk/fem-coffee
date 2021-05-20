@@ -38,12 +38,7 @@
 
   <section class="how-it-works">
     <h3 class="how-it-works__heading heading-grey">How it works</h3>
-
-    <ul class="how-it-works__list">
-      <li class="how-it-works__item" v-for="step in localSteps" :key="step">
-        <Step :step="step" />
-      </li>
-    </ul>
+    <Steps />
   </section>
 
   <div class="btn-wrapper">
@@ -54,10 +49,10 @@
 <script>
 import HeroImage from "@/components/shared/HeroImage"
 import AppButton from "@/components/ui/AppButton.vue"
-import { coffeeCollection, uniqueSellingPoints, steps } from "@/assets/content"
+import { coffeeCollection, uniqueSellingPoints } from "@/assets/content"
 import Coffee from "@/pages/home/Coffee.vue"
 import USP from "@/pages/home/USP.vue"
-import Step from "@/components/shared/Step.vue"
+import Steps from "@/components/shared/Steps.vue"
 
 export default {
   name: "Home",
@@ -65,14 +60,13 @@ export default {
     AppButton,
     Coffee,
     HeroImage,
-    Step,
+    Steps,
     USP,
   },
   data() {
     return {
       localCoffeeCollection: coffeeCollection,
       localUsps: uniqueSellingPoints,
-      localSteps: steps,
     }
   },
 }
@@ -139,9 +133,6 @@ export default {
   &__heading {
     text-align: center;
     color: $color-grey;
-  }
-  &__list {
-    list-style: none;
   }
 }
 
