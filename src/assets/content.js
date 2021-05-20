@@ -66,3 +66,36 @@ export const steps = [
       "We ship your package within 48 hours, freshly roasted. Sit back and enjoy award-winning world-class coffees curated to provide a distinct tasting experience.",
   },
 ]
+
+export const headquarters = [
+  {
+    illustration: "uk",
+    country: "United Kingdom",
+    addressDetails: [
+      "68  Asfordby Rd",
+      "Alcaston",
+      "SY6 1YA",
+      "+44 1241 918425",
+    ],
+  },
+  {
+    illustration: "canada",
+    country: "Canada",
+    addressDetails: [
+      "1528  Eglinton Avenue",
+      "Toronto",
+      "Ontario M4P 1A6",
+      "+1 416 485 2997",
+    ],
+  },
+  {
+    illustration: "australia",
+    country: "Australia",
+    addressDetails: [
+      "36 Swanston Street",
+      "Kewell",
+      "Victoria",
+      "+61 4 9928 3629",
+    ],
+  },
+]

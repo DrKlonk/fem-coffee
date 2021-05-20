@@ -46,17 +46,26 @@
     </p>
   </section>
 
-  <section class="our-headquearters">
-    <h3 class="our-headquarters__heading heading-grey">Our headquarters</h3>
+  <section class="our-headquarters">
+    <h4 class="our-headquarters__heading">Our headquarters</h4>
+    <Headquarter v-for="hq in localHqs" :key="hq.country" :headquarter="hq" />
   </section>
 </template>
 
 <script>
 import HeroImage from "@/components/ui/HeroImage.vue"
+import Headquarter from "./Headquarter.vue"
+import { headquarters } from "@/assets/content.js"
 export default {
   name: "About us",
   components: {
     HeroImage,
+    Headquarter,
+  },
+  data() {
+    return {
+      localHqs: headquarters,
+    }
   },
 }
 </script>
@@ -105,6 +114,14 @@ export default {
   }
   &__paragraph {
     margin-top: 2rem;
+  }
+}
+.our-headquarters {
+  margin-top: 8rem;
+
+  &__heading {
+    color: $color-grey;
+    text-align: center;
   }
 }
 </style>
