@@ -1,20 +1,23 @@
 <template>
   <div class="big-selection">
-    <header class="big-selection__header">
-      <h3 class="big-selection__question">{{ selection.question }}</h3>
+    <header class="big-selection__header" @click="toggleCollapsed">
+      <h4 class="big-selection__question">{{ selection.question }}</h4>
       <img
         class="big-selection__caret"
+        :class="{ up: isCollapsed }"
         src="@/assets/plan/desktop/icon-arrow.svg"
       />
     </header>
 
-    <big-selection-option
-      v-for="option in selection.options"
-      :key="option"
-      :option="option"
-      :current="selectedOption"
-      @selected="emitSelectedOption"
-    />
+    <template v-if="!isCollapsed">
+      <big-selection-option
+        v-for="option in selection.options"
+        :key="option"
+        :option="option"
+        :current="selectedOption"
+        @selected="emitSelectedOption"
+      />
+    </template>
   </div>
 </template>
 
@@ -28,6 +31,7 @@ export default {
   data() {
     return {
       selectedOption: null,
+      isCollapsed: true,
     }
   },
   props: {
@@ -44,12 +48,16 @@ export default {
         value: e,
       })
     },
+    toggleCollapsed() {
+      this.isCollapsed = !this.isCollapsed
+    },
   },
 }
 </script>
 
 <style lang="scss">
 .big-selection {
+  margin-top: 3rem;
   &:not(:last-child) {
     margin-bottom: 2rem;
   }
@@ -58,9 +66,21 @@ export default {
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
+    margin-bottom: 2rem;
   }
   &__question {
     font-size: 2rem;
+  }
+
+  &__caret {
+    transform: rotate(0deg);
+    transition: 0.5s transform;
+    &.up {
+      transform: rotate(180deg);
+    }
+    &:hover {
+      fill: $color-cyan-secondary;
+    }
   }
 }
 </style>

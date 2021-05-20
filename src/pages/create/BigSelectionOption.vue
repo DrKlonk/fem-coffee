@@ -39,6 +39,10 @@ export default {
   border-radius: $br-small;
   padding: 1.5rem;
 
+  &:hover {
+    background-color: $color-big-selection-hover;
+  }
+
   &__text {
     margin-top: 1rem;
   }
