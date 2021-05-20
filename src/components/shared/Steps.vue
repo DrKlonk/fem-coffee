@@ -1,7 +1,7 @@
 <template>
-  <ul class="steps">
+  <ul class="steps" :class="{ dark: darkMode }">
     <li class="step" v-for="step in localSteps" :key="step">
-      <Step :step="step" />
+      <Step :step="step" :dark-mode="darkMode" />
     </li>
   </ul>
 </template>
@@ -10,6 +10,7 @@
 import Step from "@/components/shared/Step.vue"
 import { steps } from "@/assets/content.js"
 export default {
+  props: ["darkMode"],
   data() {
     return {
       localSteps: steps,
@@ -21,8 +22,13 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 .steps {
   list-style: none;
+}
+.dark {
+  background-color: $color-dark-grey-blue;
+  border-radius: $br-large;
+  padding: 3rem 0;
 }
 </style>

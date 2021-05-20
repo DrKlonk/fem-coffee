@@ -1,8 +1,12 @@
 <template>
   <div class="step">
     <h2 class="step__number">{{ step.number }}</h2>
-    <h1 class="step__heading">{{ step.heading }}</h1>
-    <p class="step__paragraph">{{ step.paragraph }}</p>
+    <h1 class="step__heading" :class="{ dark: darkMode }">
+      {{ step.heading }}
+    </h1>
+    <p class="step__paragraph" :class="{ dark: darkMode }">
+      {{ step.paragraph }}
+    </p>
   </div>
 </template>
 <script>
@@ -12,6 +16,9 @@ export default {
     step: {
       type: Object,
       required: true,
+    },
+    darkMode: {
+      default: false,
     },
   },
 }
@@ -32,5 +39,8 @@ export default {
   &__paragraph {
     margin-top: 2rem;
   }
+}
+.dark {
+  color: $color-light-cream;
 }
 </style>

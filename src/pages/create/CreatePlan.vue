@@ -7,7 +7,7 @@
       fresh to your door.</template
     >
   </HeroImage>
-  <Steps />
+  <Steps :dark-mode="true" />
 </template>
 
 <script>
@@ -25,3 +25,9 @@ export default {
   name: "CreatePlan",
 }
 </script>
+
+<style lang="scss">
+.steps {
+  margin-top: 6rem;
+}
+</style>
