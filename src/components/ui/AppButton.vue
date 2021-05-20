@@ -33,5 +33,9 @@ export default {
   border: none;
   border-radius: 0.375rem;
   color: $color-light-cream;
+  cursor: pointer;
+  &:hover {
+    color: $color-pale-orange;
+  }
 }
 </style>
