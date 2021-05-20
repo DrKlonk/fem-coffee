@@ -31,7 +31,6 @@ export default {
   },
   methods: {
     optionSelected(e) {
-      console.log(e)
       this.$emit("optionSelected", {
         category: this.selection.category,
         value: e,

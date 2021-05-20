@@ -16,6 +16,12 @@
       @option-selected="optionSelected"
     />
   </section>
+  <section class="order-summary">
+    <h4 class="order-summary__heading">Order summary</h4>
+    <p class="order-summary__paragraph">
+      {{ determineOrderSummary() }}
+    </p>
+  </section>
 </template>
 
 <script>
@@ -46,6 +52,9 @@ export default {
         return
       }
       this.order[e.category] = e.value
+    },
+    determineOrderSummary() {
+      return `"I drink my coffee as ${this.order.method}, with a ${this.order.type}"`
     },
   },
 }
