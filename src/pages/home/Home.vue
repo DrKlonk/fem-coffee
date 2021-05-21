@@ -86,7 +86,16 @@ export default {
 
   &__heading {
     font-size: 2.5rem;
-    background: -webkit-linear-gradient($color-grey, rgba($color-grey, 0.5));
+    @include respond(tab-port) {
+      font-size: 4rem;
+      position: absolute;
+      transform: translateY(1.5rem);
+      z-index: -1;
+    }
+    background: -webkit-linear-gradient(
+      rgba($color-grey, 0.5),
+      rgba($color-grey, 0.1)
+    );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
