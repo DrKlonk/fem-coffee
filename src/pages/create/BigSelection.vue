@@ -18,6 +18,7 @@
         :option="option"
         :current="selectedOption"
         @selected="emitSelectedOption"
+        :disabled="disabled"
       />
     </template>
   </div>
@@ -33,7 +34,7 @@ export default {
   data() {
     return {
       selectedOption: null,
-      isCollapsed: !this.disabled,
+      isCollapsedByUser: true,
     }
   },
   props: {
@@ -58,7 +59,12 @@ export default {
       if (this.disabled) {
         return
       }
-      this.isCollapsed = !this.isCollapsed
+      this.isCollapsedByUser = !this.isCollapsedByUser
+    },
+  },
+  computed: {
+    isCollapsed() {
+      return this.disabled || this.isCollapsedByUser
     },
   },
 }
@@ -95,7 +101,9 @@ export default {
     }
   }
 }
-.disabled {
-  opacity: 0.5;
+.big-selection.disabled {
+  .big-selection__question {
+    color: rgba($color-grey, 0.5);
+  }
 }
 </style>
