@@ -18,9 +18,7 @@
   </section>
   <section class="order-summary">
     <h4 class="order-summary__heading">Order summary</h4>
-    <p class="order-summary__paragraph">
-      {{ determineOrderSummary() }}
-    </p>
+    <p class="order-summary__paragraph" v-html="determineOrderSummary()"></p>
   </section>
 </template>
 
@@ -49,7 +47,17 @@ export default {
       this.order[e.category] = e.value
     },
     determineOrderSummary() {
-      return `"I drink my coffee as ${this.order.method}, with a ${this.order.type}"`
+      return `\`\`I drink my coffee ${
+        this.order.method == "Capsules" ? "using" : "as"
+      } <span class="order-summary__option">${this.order.method ??
+        "____"}</span>, with a <span class="order-summary__option">${this.order
+        .type ??
+        "____"}</span> type of bean. <span class="order-summary__option">${this
+        .order.amount ??
+        "____"}</span> ground ala <span class="order-summary__option">${this
+        .order.grind ??
+        "____"}</span>, sent to me <span class="order-summary__option">${this
+        .order.delivery ?? "____"}</span>\`\``
     },
   },
 }
@@ -63,6 +71,7 @@ export default {
   background-color: $color-dark-grey-blue;
   padding: 1.5rem;
   border-radius: $br-large;
+  margin-top: 5rem;
 
   &__heading {
     color: $color-grey;
@@ -74,6 +83,9 @@ export default {
     color: $color-light-cream;
     font-family: "Fraunces";
     font-size: 1.5rem;
+  }
+  &__option {
+    color: $color-cyan;
   }
 }
 </style>

@@ -69,12 +69,15 @@ export default {
     margin-bottom: 2rem;
   }
   &__question {
-    font-size: 2rem;
+    flex-basis: 15rem;
+    color: $color-grey;
+    font-size: 1.5rem;
   }
 
   &__caret {
     transform: rotate(0deg);
     transition: 0.5s transform;
+    z-index: -1;
     &.up {
       transform: rotate(180deg);
     }
