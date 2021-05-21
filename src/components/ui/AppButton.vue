@@ -1,5 +1,5 @@
 <template>
-  <button class="btn" @click="routerPush">
+  <button class="btn" @click="$emit('clicked')">
     <slot>
       Create your plan
     </slot>
@@ -9,17 +9,6 @@
 <script>
 export default {
   name: "AppButton",
-  props: {
-    link: {
-      type: String,
-      default: "create-plan",
-    },
-  },
-  methods: {
-    routerPush() {
-      this.$router.push(this.link)
-    },
-  },
 }
 </script>
 

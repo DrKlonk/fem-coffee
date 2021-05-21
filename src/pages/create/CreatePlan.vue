@@ -21,9 +21,16 @@
     <h4 class="order-summary__heading">Order summary</h4>
     <p class="order-summary__paragraph" v-html="determineOrderSummary"></p>
   </section>
+
+  <div class="order-button">
+    <app-button @clicked="showOrderModal">
+      Create my plan!
+    </app-button>
+  </div>
 </template>
 
 <script>
+import AppButton from "@/components/ui/AppButton.vue"
 import HeroImage from "@/components/shared/HeroImage"
 import Steps from "@/components/shared/Steps.vue"
 import { orderSelections } from "@/assets/js/plan.js"
@@ -41,7 +48,7 @@ export default {
       localOrderSelections: orderSelections,
     }
   },
-  components: { HeroImage, Steps, BigSelection },
+  components: { HeroImage, Steps, BigSelection, AppButton },
   name: "CreatePlan",
   methods: {
     optionSelected(e) {
@@ -49,6 +56,9 @@ export default {
     },
     determineDisabled(category) {
       return this.order.method === "Capsule" && category === "grind"
+    },
+    showOrderModal() {
+      console.log("test")
     },
   },
   computed: {
@@ -103,5 +113,11 @@ export default {
   &__option {
     color: $color-cyan;
   }
+}
+
+.order-button {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
 }
 </style>

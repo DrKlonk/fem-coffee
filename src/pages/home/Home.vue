@@ -6,7 +6,7 @@
       curated artisan coffees from our best roasters delivered directly to your
       door, at your schedule.</template
     >
-    <template v-slot:button><AppButton /></template>
+    <template v-slot:button><AppButton @clicked="goToCreatePlan"/></template>
   </HeroImage>
 
   <section class="our-collection">
@@ -42,7 +42,7 @@
   </section>
 
   <div class="btn-wrapper">
-    <AppButton />
+    <app-button @clicked="goToCreatePlan">hoi</app-button>
   </div>
 </template>
 
@@ -68,6 +68,11 @@ export default {
       localCoffeeCollection: coffeeCollection,
       localUsps: uniqueSellingPoints,
     }
+  },
+  methods: {
+    goToCreatePlan() {
+      this.$router.push({ name: "CreatePlan" })
+    },
   },
 }
 </script>
