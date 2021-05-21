@@ -8,12 +8,13 @@
       />
     </router-link>
     <Menu-button v-if="innerWidth < 400" />
-    <!-- <NavBar v-else> -->
+    <NavBar v-else />
   </header>
 </template>
 
 <script>
 import MenuButton from "@/components/menu/MenuButton.vue"
+import NavBar from "@/components/menu/NavBar.vue"
 export default {
   name: "Header",
   data() {
@@ -23,6 +24,14 @@ export default {
   },
   components: {
     MenuButton,
+    NavBar,
+  },
+  methods: {
+    setInnerWidth() {
+      return function() {
+        this.innerWidth = window.innerWidth
+      }
+    },
   },
   computed: {
     viewPortWidth() {
@@ -30,12 +39,10 @@ export default {
     },
   },
   mounted() {
-    window.addEventListener("resize", () => {
-      this.innerWidth = window.innerWidth
-    })
+    window.addEventListener("resize", this.setInnerWidth)
   },
   beforeUnmount() {
-    window.removeEventListener("resize")
+    window.removeEventListener("resize", this.setInnerWidth)
   },
 }
 </script>

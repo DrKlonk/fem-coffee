@@ -1,7 +1,7 @@
 <template>
   <div class="sidebar">
     <transition name="slide">
-      <div v-if="isPanelOpen" class="sidebar-panel">
+      <nav v-if="isPanelOpen" class="sidebar-panel">
         <ul class="sidebar-panel-nav">
           <li
             v-for="route in localRoutes"
@@ -14,7 +14,7 @@
             }}</router-link>
           </li>
         </ul>
-      </div>
+      </nav>
     </transition>
   </div>
 </template>
