@@ -26,6 +26,7 @@ export default {
 
 <style lang="scss" scoped>
 .step {
+  position: relative;
   text-align: center;
   @include respond(tab-port) {
     text-align: left;

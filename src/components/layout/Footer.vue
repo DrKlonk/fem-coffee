@@ -58,9 +58,7 @@ export default {
   margin-top: 8rem;
   margin-bottom: 3rem;
   padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include flex-col-center;
   &__logo {
     margin-top: 2rem;
   }
@@ -68,9 +66,12 @@ export default {
   &__links {
     margin-top: 3rem;
     list-style: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include flex-col-center;
+    @include respond(tab-port) {
+      width: 20rem;
+      flex-direction: row;
+      justify-content: space-between;
+    }
   }
   &__link-element {
     margin: 1rem 0;
