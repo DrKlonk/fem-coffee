@@ -59,9 +59,9 @@ export default {
   overflow-y: auto;
   background-image: linear-gradient(
     to bottom,
-    $color-light-cream,
-    $color-light-cream 300px,
-    rgba($color-light-cream, 0.5)
+    #fff,
+    #fff 20rem,
+    rgba(#fff, 0.5)
   );
   position: fixed;
   left: 0;
@@ -75,7 +75,7 @@ export default {
     list-style: none;
     text-align: center;
     font-family: "Fraunces";
-    font-size: 1.2rem;
+    font-size: 1.5rem;
 
     &__item {
       &:not(:last-child) {

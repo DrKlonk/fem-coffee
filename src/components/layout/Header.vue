@@ -32,7 +32,7 @@ export default {
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem;
-  background-color: $color-light-cream;
+  background-color: #fff;
 }
 .logo {
   width: 10rem;
