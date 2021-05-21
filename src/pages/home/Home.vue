@@ -23,12 +23,14 @@
   </section>
 
   <section class="why-us">
-    <h2 class="why-us__heading">Why choose us?</h2>
-    <p class="why-us__paragraph">
-      A large part of our role is choosing which particular coffees will be
-      featured in our range. This means working closely with the best coffee
-      growers to give you a more impactful experience on every level.
-    </p>
+    <div class="why-us__text-container">
+      <h2 class="why-us__heading">Why choose us?</h2>
+      <p class="why-us__paragraph">
+        A large part of our role is choosing which particular coffees will be
+        featured in our range. This means working closely with the best coffee
+        growers to give you a more impactful experience on every level.
+      </p>
+    </div>
     <ul class="why-us__list">
       <li class="why-us__item" v-for="usp in localUsps" :key="usp">
         <USP :usp="usp" />
@@ -105,6 +107,10 @@ export default {
   padding: 1.5rem;
   color: $color-light-cream;
 
+  @include respond(tab-port) {
+    padding: 3rem;
+  }
+
   &::before {
     position: absolute;
     left: 1.5rem;
@@ -119,8 +125,8 @@ export default {
     }
   }
 
-  &__list {
-    list-style: none;
+  &__text-container {
+    @include flex-col-center;
   }
 
   &__heading {
@@ -130,6 +136,12 @@ export default {
 
   &__paragraph {
     margin-top: 1rem;
+    @include respond(tab-port) {
+      max-width: 32rem;
+    }
+  }
+  &__list {
+    list-style: none;
   }
 }
 
@@ -138,6 +150,9 @@ export default {
 
   &__heading {
     text-align: center;
+    @include respond(tab-port) {
+      text-align: left;
+    }
     color: $color-grey;
   }
 }
@@ -146,5 +161,8 @@ export default {
   margin-top: 3rem;
   display: flex;
   justify-content: center;
+  @include respond(tab-port) {
+    justify-content: start;
+  }
 }
 </style>

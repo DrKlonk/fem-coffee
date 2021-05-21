@@ -1,6 +1,6 @@
 <template>
   <ul class="steps" :class="{ dark: darkMode }">
-    <li class="step" v-for="step in localSteps" :key="step">
+    <li class="step-item" v-for="step in localSteps" :key="step">
       <Step :step="step" :dark-mode="darkMode" />
     </li>
   </ul>
@@ -25,6 +25,16 @@ export default {
 <style lang="scss" scoped>
 .steps {
   list-style: none;
+  @include respond(tab-port) {
+    display: flex;
+  }
+}
+.step-item {
+  @include respond(tab-port) {
+    &:not(:last-of-type) {
+      margin-right: 1rem;
+    }
+  }
 }
 .dark {
   background-color: $color-dark-grey-blue;

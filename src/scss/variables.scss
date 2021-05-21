@@ -1,3 +1,5 @@
+@import "./mixins.scss";
+
 $color-cyan: #0e8784;
 $color-dark-grey-blue: #333d4b;
 $color-pale-orange: #fdd6ba;
@@ -14,3 +16,6 @@ $color-big-selection-hover: #fdd6ba;
 $br-large: 0.625rem;
 $br-medium: 0.5rem;
 $br-small: 0.375rem;
+
+$site-padding: 1.5rem;
+$site-padding-tablet: 3.5rem;

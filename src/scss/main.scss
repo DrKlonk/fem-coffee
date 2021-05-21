@@ -1,6 +1,13 @@
+@import "./mixins.scss";
+@import "./variables.scss";
+
 html {
   box-sizing: border-box;
-  padding: 1.5rem;
+  padding: $site-padding;
+
+  @include respond(tab-port) {
+    padding: $site-padding-tablet;
+  }
 }
 
 *,

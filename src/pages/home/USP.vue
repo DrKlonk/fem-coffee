@@ -45,7 +45,7 @@ export default {
 
   &__icon {
     @include respond(tab-port) {
-      margin-right: 3rem;
+      padding: 1rem 2rem;
     }
   }
 

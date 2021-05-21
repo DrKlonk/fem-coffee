@@ -27,6 +27,9 @@ export default {
 <style lang="scss" scoped>
 .step {
   text-align: center;
+  @include respond(tab-port) {
+    text-align: left;
+  }
   margin-top: 3rem;
   &__number {
     color: $color-pale-orange;
@@ -35,6 +38,9 @@ export default {
   &__heading {
     margin-top: 1rem;
     font-size: 1.75rem;
+    @include respond(tab-port) {
+      max-width: 12rem;
+    }
   }
   &__paragraph {
     margin-top: 2rem;
