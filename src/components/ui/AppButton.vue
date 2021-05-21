@@ -1,5 +1,5 @@
 <template>
-  <button class="btn" @click="$emit('clicked')">
+  <button class="btn" :disabled="disabled" @click="$emit('clicked')">
     <slot>
       Create your plan
     </slot>
@@ -9,6 +9,12 @@
 <script>
 export default {
   name: "AppButton",
+  props: {
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
+  },
 }
 </script>
 
@@ -25,6 +31,9 @@ export default {
   cursor: pointer;
   &:hover {
     background-color: $color-cyan-secondary;
+  }
+  &:disabled {
+    background-color: $color-light-cream-secondary;
   }
 }
 </style>

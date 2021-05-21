@@ -23,7 +23,10 @@
   </section>
 
   <div class="order-button">
-    <app-button @clicked="$refs.orderModal.openModal()">
+    <app-button
+      @clicked="$refs.orderModal.openModal()"
+      :disabled="!isOrderComplete"
+    >
       Create my plan!
     </app-button>
   </div>
@@ -78,6 +81,9 @@ export default {
     },
     determineDisabled(category) {
       return this.order.method === "Capsule" && category === "grind"
+    },
+    logOrder() {
+      console.log("order logged!")
     },
   },
   computed: {
