@@ -19,7 +19,7 @@
   </section>
   <section class="order-summary">
     <h4 class="order-summary__heading">Order summary</h4>
-    <p class="order-summary__paragraph" v-html="determineOrderSummary()"></p>
+    <p class="order-summary__paragraph" v-html="determineOrderSummary"></p>
   </section>
 </template>
 
@@ -47,21 +47,33 @@ export default {
     optionSelected(e) {
       this.order[e.category] = e.value
     },
-    determineOrderSummary() {
-      return `\`\`I drink my coffee ${
-        this.order.method == "Capsule" ? "using" : "as"
-      } <span class="order-summary__option">${this.order.method ??
-        "____"}</span>, with a <span class="order-summary__option">${this.order
-        .type ??
-        "____"}</span> type of bean. <span class="order-summary__option">${this
-        .order.amount ??
-        "____"}</span> ground ala <span class="order-summary__option">${this
-        .order.grind ??
-        "____"}</span>, sent to me <span class="order-summary__option">${this
-        .order.delivery ?? "____"}</span>\`\``
-    },
     determineDisabled(category) {
       return this.order.method === "Capsule" && category === "grind"
+    },
+  },
+  computed: {
+    determineOrderSummary() {
+      const method = `I drink my coffee ${
+        this.order.method == "Capsule" ? "using" : "as"
+      } <span class="order-summary__option">${this.order.method ??
+        "____"}</span>,`
+
+      const bean = `with a <span class="order-summary__option">${this.order
+        .type ?? "____"}</span> type of bean.`
+
+      const amount = `<span class="order-summary__option">${this.order.amount ??
+        "____"}</span>`
+
+      const grind =
+        this.order.method === "Capsule"
+          ? ""
+          : `ground ala <span class="order-summary__option">${this.order
+              .grind ?? "____"}</span>`
+
+      const delivery = `, sent to me <span class="order-summary__option">${this
+        .order.delivery ?? "____"}</span>`
+
+      return `\`\`${method} ${bean} ${amount} ${grind} ${delivery}\`\``
     },
   },
 }
