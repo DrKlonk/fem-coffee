@@ -19,22 +19,44 @@
   </section>
   <section class="order-summary">
     <h4 class="order-summary__heading">Order summary</h4>
-    <p class="order-summary__paragraph" v-html="determineOrderSummary"></p>
+    <p class="order-summary__paragraph" v-html="orderSummary"></p>
   </section>
 
   <div class="order-button">
-    <app-button @clicked="showOrderModal">
+    <app-button @clicked="$refs.orderModal.openModal()">
       Create my plan!
     </app-button>
   </div>
+
+  <Modal ref="orderModal">
+    <template v-slot:header>
+      <h3>Order summary</h3>
+    </template>
+    <template v-slot:body
+      ><p
+        class="order-summary__paragraph order-summary__paragraph--modal"
+        v-html="orderSummary"
+      ></p>
+      <p>
+        Is this correct? You can proceed to checkout or go back to plan
+        selection if something is off. Subscription discount codes can also be
+        redeemed at the checkout.
+      </p></template
+    >
+    <template v-slot:footer>
+      <AppButton @clicked="logOrder">{{ determinePrice }}</AppButton>
+    </template>
+  </Modal>
 </template>
 
 <script>
 import AppButton from "@/components/ui/AppButton.vue"
+import BigSelection from "./BigSelection.vue"
 import HeroImage from "@/components/shared/HeroImage"
+import Modal from "@/components/ui/Modal.vue"
 import Steps from "@/components/shared/Steps.vue"
 import { orderSelections } from "@/assets/js/plan.js"
-import BigSelection from "./BigSelection.vue"
+
 export default {
   data() {
     return {
@@ -46,9 +68,10 @@ export default {
         delivery: null,
       },
       localOrderSelections: orderSelections,
+      showModal: true,
     }
   },
-  components: { HeroImage, Steps, BigSelection, AppButton },
+  components: { HeroImage, Steps, BigSelection, AppButton, Modal },
   name: "CreatePlan",
   methods: {
     optionSelected(e) {
@@ -57,12 +80,12 @@ export default {
     determineDisabled(category) {
       return this.order.method === "Capsule" && category === "grind"
     },
-    showOrderModal() {
+    logOrder() {
       console.log("test")
     },
   },
   computed: {
-    determineOrderSummary() {
+    orderSummary() {
       const method = `I drink my coffee ${
         this.order.method == "Capsule" ? "using" : "as"
       } <span class="order-summary__option">${this.order.method ??
@@ -84,6 +107,9 @@ export default {
         .order.delivery ?? "____"}</span>`
 
       return `\`\`${method} ${bean} ${amount} ${grind} ${delivery}\`\``
+    },
+    checkoutCosts() {
+      return `chekcout`
     },
   },
 }
@@ -109,6 +135,9 @@ export default {
     color: $color-light-cream;
     font-family: "Fraunces";
     font-size: 1.5rem;
+    &--modal {
+      color: $color-grey;
+    }
   }
   &__option {
     color: $color-cyan;
