@@ -114,6 +114,9 @@ export default {
     height: 54rem;
     background-color: $color-dark-grey;
     border-radius: $br-large;
+    @include respond(tab-port) {
+      height: 32rem;
+    }
   }
 
   &__list {

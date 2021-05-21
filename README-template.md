@@ -91,6 +91,7 @@ Use this section to outline areas that you want to continue focusing on in futur
 
 - [Sidebar menu](https://regenrek.com/posts/how-to-create-an-animated-vue-sidebar-menu-with-vue-observable/) - This helped me creating the slider menu. Works really well!
 - [Modal](https://medium.com/notonlycss/how-to-build-a-modal-in-vue-js-b3db644afaeb) - Nice little modal component
+- [ViewportWidth](https://www.npmjs.com/package/vue-window-size) - Awesome package to use the viewport width reponsively in all components
 
 ## Author
 

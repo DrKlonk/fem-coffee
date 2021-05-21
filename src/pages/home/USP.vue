@@ -5,12 +5,14 @@
       :src="require(`@/assets/home/desktop/icon-${usp.img}.svg`)"
       :alt="usp.img"
     />
-    <h3 class="usp__heading">
-      {{ usp.heading }}
-    </h3>
-    <p class="usp__paragraph">
-      {{ usp.paragraph }}
-    </p>
+    <div class="usp__text-container">
+      <h3 class="usp__heading">
+        {{ usp.heading }}
+      </h3>
+      <p class="usp__paragraph">
+        {{ usp.paragraph }}
+      </p>
+    </div>
   </article>
 </template>
 
@@ -33,12 +35,31 @@ export default {
   padding: 6rem 2rem 4rem 2rem;
   border-radius: $br-medium;
 
+  @include flex-col-center;
+
+  @include respond(tab-port) {
+    padding: 2rem;
+    flex-direction: row;
+    align-items: center;
+  }
+
   &__icon {
-    margin-bottom: 3rem;
+    @include respond(tab-port) {
+      margin-right: 3rem;
+    }
   }
 
   &__heading {
     margin-bottom: 2rem;
+    @include respond(tab-port) {
+      margin-bottom: 1rem;
+      text-align: left;
+    }
+  }
+  &__paragraph {
+    @include respond(tab-port) {
+      text-align: left;
+    }
   }
 }
 </style>

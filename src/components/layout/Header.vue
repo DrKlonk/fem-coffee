@@ -7,7 +7,7 @@
         src="@/assets/shared/desktop/logo.svg"
       />
     </router-link>
-    <Menu-button v-if="innerWidth < 400" />
+    <Menu-button v-if="$windowWidth < 600" />
     <NavBar v-else />
   </header>
 </template>
