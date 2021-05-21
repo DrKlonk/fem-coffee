@@ -39,6 +39,7 @@ export default {
     margin-top: 1rem;
     font-size: 1.75rem;
     @include respond(tab-port) {
+      margin-top: 3rem;
       max-width: 12rem;
     }
   }
