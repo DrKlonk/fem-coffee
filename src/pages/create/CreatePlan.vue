@@ -14,6 +14,7 @@
       :key="selection.category"
       :selection="selection"
       @option-selected="optionSelected"
+      :disabled="determineDisabled(selection.category)"
     />
   </section>
   <section class="order-summary">
@@ -48,7 +49,7 @@ export default {
     },
     determineOrderSummary() {
       return `\`\`I drink my coffee ${
-        this.order.method == "Capsules" ? "using" : "as"
+        this.order.method == "Capsule" ? "using" : "as"
       } <span class="order-summary__option">${this.order.method ??
         "____"}</span>, with a <span class="order-summary__option">${this.order
         .type ??
@@ -58,6 +59,9 @@ export default {
         .order.grind ??
         "____"}</span>, sent to me <span class="order-summary__option">${this
         .order.delivery ?? "____"}</span>\`\``
+    },
+    determineDisabled(category) {
+      return this.order.method === "Capsule" && category === "grind"
     },
   },
 }

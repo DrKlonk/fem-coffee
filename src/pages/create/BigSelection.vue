@@ -1,7 +1,9 @@
 <template>
-  <div class="big-selection">
+  <div class="big-selection" :class="{ disabled: disabled }">
     <header class="big-selection__header" @click="toggleCollapsed">
-      <h4 class="big-selection__question">{{ selection.question }}</h4>
+      <h4 class="big-selection__question">
+        {{ selection.question }}
+      </h4>
       <img
         class="big-selection__caret"
         :class="{ up: isCollapsed }"
@@ -31,13 +33,17 @@ export default {
   data() {
     return {
       selectedOption: null,
-      isCollapsed: true,
+      isCollapsed: !this.disabled,
     }
   },
   props: {
     selection: {
       type: Object,
       required: true,
+    },
+    disabled: {
+      type: Boolean,
+      default: false,
     },
   },
   methods: {
@@ -49,13 +55,16 @@ export default {
       })
     },
     toggleCollapsed() {
+      if (this.disabled) {
+        return
+      }
       this.isCollapsed = !this.isCollapsed
     },
   },
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .big-selection {
   margin-top: 3rem;
   &:not(:last-child) {
@@ -75,15 +84,18 @@ export default {
   }
 
   &__caret {
-    transform: rotate(0deg);
+    transform: rotate(180deg);
     transition: 0.5s transform;
     z-index: -1;
     &.up {
-      transform: rotate(180deg);
+      transform: rotate(0deg);
     }
     &:hover {
       fill: $color-cyan-secondary;
     }
   }
+}
+.disabled {
+  opacity: 0.5;
 }
 </style>
