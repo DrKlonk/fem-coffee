@@ -93,19 +93,6 @@ export const orderSelections = [
     ],
   },
 ]
-// - Updating per shipment price (shown in "How often should we deliver?" section at the bottom) based on weight selected
-//   - If 250g weight is selected
-//     - Every Week price per shipment is $7.20
-//     - Every 2 Weeks price per shipment is $9.60
-//     - Every Month price per shipment is $12.00
-//   - If 500g weight is selected
-//     - Every Week price per shipment is $13.00
-//     - Every 2 Weeks price per shipment is $17.50
-//     - Every Month price per shipment is $22.00
-//   - If 1000g weight is selected
-//     - Every Week price per shipment is $22.00
-//     - Every 2 Weeks price per shipment is $32.00
-//     - Every Month price per shipment is $42.00
 
 export const pricingTable = {
   "250g": {

@@ -24,7 +24,7 @@ export default {
   color: $color-light-cream;
   cursor: pointer;
   &:hover {
-    color: $color-pale-orange;
+    background-color: $color-cyan-secondary;
   }
 }
 </style>

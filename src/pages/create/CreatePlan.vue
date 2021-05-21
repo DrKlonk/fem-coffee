@@ -68,7 +68,6 @@ export default {
         delivery: null,
       },
       localOrderSelections: orderSelections,
-      showModal: true,
     }
   },
   components: { HeroImage, Steps, BigSelection, AppButton, Modal },
@@ -79,9 +78,6 @@ export default {
     },
     determineDisabled(category) {
       return this.order.method === "Capsule" && category === "grind"
-    },
-    logOrder() {
-      console.log("test")
     },
   },
   computed: {
@@ -109,9 +105,12 @@ export default {
       return `\`\`${method} ${bean} ${amount} ${grind} ${delivery}\`\``
     },
     checkoutCosts() {
-      return `Checkout - ${
-        pricingTable[this.order.amount][this.order.delivery]
-      } / ${this.delivery}`
+      return (
+        this.isOrderComplete &&
+        `Checkout - ${pricingTable[this.order.amount][this.order.delivery]} / ${
+          this.delivery
+        }`
+      )
     },
     delivery() {
       let delivery = "mo"
@@ -122,6 +121,19 @@ export default {
         delivery = "2 weeks"
       }
       return delivery
+    },
+    isOrderComplete() {
+      const mandatoryFields = ["method", "type", "amount", "delivery"]
+      const areMandatoryFieldsPresent = mandatoryFields.every((field) => {
+        return this.order[field] != null
+      })
+      if (!areMandatoryFieldsPresent) {
+        return false
+      }
+      if (this.order.method !== "Capsule") {
+        return this.order.grind !== null
+      }
+      return true
     },
   },
 }

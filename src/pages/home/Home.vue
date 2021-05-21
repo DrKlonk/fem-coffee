@@ -42,7 +42,7 @@
   </section>
 
   <div class="btn-wrapper">
-    <app-button @clicked="goToCreatePlan">hoi</app-button>
+    <app-button @clicked="goToCreatePlan" />
   </div>
 </template>
 
