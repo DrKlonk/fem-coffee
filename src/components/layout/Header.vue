@@ -59,6 +59,7 @@ export default {
   align-items: center;
   padding: 1.5rem;
   background-color: #fff;
+  z-index: 100;
 }
 .logo {
   width: 10rem;
