@@ -7,7 +7,8 @@
         src="@/assets/shared/desktop/logo.svg"
       />
     </router-link>
-    <Menu-button />
+    <Menu-button v-if="innerWidth < 400" />
+    <!-- <NavBar v-else> -->
   </header>
 </template>
 
@@ -15,8 +16,26 @@
 import MenuButton from "@/components/menu/MenuButton.vue"
 export default {
   name: "Header",
+  data() {
+    return {
+      innerWidth: window.innerWidth,
+    }
+  },
   components: {
     MenuButton,
+  },
+  computed: {
+    viewPortWidth() {
+      return window.innerWidth
+    },
+  },
+  mounted() {
+    window.addEventListener("resize", () => {
+      this.innerWidth = window.innerWidth
+    })
+  },
+  beforeUnmount() {
+    window.removeEventListener("resize")
   },
 }
 </script>
