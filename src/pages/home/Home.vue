@@ -79,10 +79,8 @@ export default {
 
 <style lang="scss">
 .our-collection {
+  @include flex-col-center;
   margin-top: 6rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 
   &__heading {
     font-size: 2.5rem;

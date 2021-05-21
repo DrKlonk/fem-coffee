@@ -52,17 +52,12 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
-- CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+- [VueJS](https://vuejs.org/) - JS library
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+I revamped my Vue knowledge a bit. I also found out how to make the order form work without it being a form.
 
 To see how you can add code snippets, see below:
 
@@ -95,8 +90,7 @@ Use this section to outline areas that you want to continue focusing on in futur
 ### Useful resources
 
 - [Sidebar menu](https://regenrek.com/posts/how-to-create-an-animated-vue-sidebar-menu-with-vue-observable/) - This helped me creating the slider menu. Works really well!
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [Modal](https://medium.com/notonlycss/how-to-build-a-modal-in-vue-js-b3db644afaeb) - Nice little modal component
 
 ## Author
 
