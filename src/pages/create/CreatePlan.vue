@@ -44,7 +44,7 @@
       </p></template
     >
     <template v-slot:footer>
-      <AppButton @clicked="logOrder">{{ determinePrice }}</AppButton>
+      <AppButton @clicked="logOrder">{{ checkoutCosts }}</AppButton>
     </template>
   </Modal>
 </template>
@@ -55,7 +55,7 @@ import BigSelection from "./BigSelection.vue"
 import HeroImage from "@/components/shared/HeroImage"
 import Modal from "@/components/ui/Modal.vue"
 import Steps from "@/components/shared/Steps.vue"
-import { orderSelections } from "@/assets/js/plan.js"
+import { orderSelections, pricingTable } from "@/assets/js/plan.js"
 
 export default {
   data() {
@@ -109,7 +109,19 @@ export default {
       return `\`\`${method} ${bean} ${amount} ${grind} ${delivery}\`\``
     },
     checkoutCosts() {
-      return `chekcout`
+      return `Checkout - ${
+        pricingTable[this.order.amount][this.order.delivery]
+      } / ${this.delivery}`
+    },
+    delivery() {
+      let delivery = "mo"
+      if (this.order.delivery === "Every week") {
+        delivery = "week"
+      }
+      if (this.order.delivery === "Every 2 weeks") {
+        delivery = "2 weeks"
+      }
+      return delivery
     },
   },
 }
