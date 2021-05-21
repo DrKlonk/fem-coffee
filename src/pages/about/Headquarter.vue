@@ -33,20 +33,30 @@ export default {
 
 <style lang="scss">
 .headquarter {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include flex-col-center;
+  @include respond(tab-port) {
+    align-items: start;
+    width: 14rem;
+    &:not(:last-of-type) {
+      margin-right: 1rem;
+    }
+  }
   &__image {
     margin-top: 6rem;
+    min-height: 4rem;
   }
   &__country {
     margin-top: 3rem;
+    @include respond(tab-port) {
+      font-size: 1.5rem;
+    }
   }
   &__address {
     margin-top: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include flex-col-center;
+    @include respond(tab-port) {
+      align-items: start;
+    }
   }
   &__address-line {
     font-style: normal;

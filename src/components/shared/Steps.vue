@@ -32,7 +32,7 @@ export default {
 .step-item {
   @include respond(tab-port) {
     &:not(:last-of-type) {
-      margin-right: 1rem;
+      margin-right: 2rem;
     }
   }
 }
