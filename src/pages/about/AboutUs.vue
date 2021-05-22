@@ -22,6 +22,12 @@
       src="@/assets/about/tablet/image-commitment.jpg"
       alt="A guy making coffee"
     />
+    <img
+      v-else
+      class="image our-commitment__image"
+      src="@/assets/about/desktop/image-commitment.jpg"
+      alt="A guy making coffee"
+    />
 
     <div class="our-commitment__text-container">
       <h3 class="our-commitment__heading">
@@ -90,13 +96,18 @@ export default {
   width: 100%;
 }
 .our-commitment {
+  margin-top: 4rem;
   @include flex-col-center;
   @include respond(tab-port) {
     flex-direction: row;
     align-items: center;
+    justify-content: center;
+  }
+  @include respond(tab-port) {
+    max-width: 54rem;
+    margin: 3rem auto;
   }
   &__image {
-    margin-top: 5rem;
     border-radius: $br-large;
     width: 100%;
     @include respond(tab-port) {
@@ -108,6 +119,7 @@ export default {
     @include respond(tab-port) {
       margin-left: 2rem;
       align-items: start;
+      padding: 2rem;
     }
   }
   &__heading {
