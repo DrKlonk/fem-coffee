@@ -60,6 +60,9 @@ export default {
   padding: 1.5rem;
   background-color: #fff;
   z-index: 100;
+  @include respond(tab-land) {
+    padding: 3.5rem;
+  }
 }
 .logo {
   width: 10rem;
