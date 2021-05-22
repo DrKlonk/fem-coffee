@@ -34,6 +34,10 @@ export default {
 .option {
   &:not(:last-child) {
     margin-bottom: 1rem;
+    @include respond(tab-port) {
+      margin-bottom: 0;
+      margin-right: 1rem;
+    }
   }
   background-color: $color-big-selection;
   border-radius: $br-small;

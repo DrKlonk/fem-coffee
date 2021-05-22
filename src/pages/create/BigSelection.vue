@@ -12,14 +12,16 @@
     </header>
 
     <template v-if="!isCollapsed">
-      <big-selection-option
-        v-for="option in selection.options"
-        :key="option"
-        :option="option"
-        :current="selectedOption"
-        @selected="emitSelectedOption"
-        :disabled="disabled"
-      />
+      <div class="big-selection__options">
+        <big-selection-option
+          v-for="option in selection.options"
+          :key="option"
+          :option="option"
+          :current="selectedOption"
+          @selected="emitSelectedOption"
+          :disabled="disabled"
+        />
+      </div>
     </template>
   </div>
 </template>
@@ -98,6 +100,14 @@ export default {
     }
     &:hover {
       fill: $color-cyan-secondary;
+    }
+  }
+  &__options {
+    display: flex;
+    flex-direction: column;
+    @include respond(tab-port) {
+      flex-direction: row;
+      justify-content: space-between;
     }
   }
 }
