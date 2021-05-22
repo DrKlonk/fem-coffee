@@ -38,14 +38,14 @@ export default {
   color: $color-dark-grey-blue;
   text-transform: uppercase;
   padding: 1rem;
-  font-size: 0.935rem;
-  font-weight: bold;
+  font-size: 0.875rem;
+  font-weight: 900;
   text-decoration: none;
-  color: $color-grey;
+  letter-spacing: 0.05rem;
+  color: rgba($color-grey, 0.5);
 
   &-active {
-    color: $color-cyan;
-    text-decoration: underline;
+    color: $color-dark-grey;
   }
   &:hover {
     color: $color-dark-grey;
