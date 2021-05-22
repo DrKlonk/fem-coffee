@@ -199,6 +199,18 @@ export default {
       color: $color-cyan;
     }
   }
+  &__text {
+    text-decoration: none;
+    &:active,
+    &:hover {
+      color: $color-dark-grey-blue;
+    }
+    &:visited,
+    &:link {
+      color: yellow;
+      color: rgba($color-dark-grey-blue, 0.5);
+    }
+  }
 }
 .order {
   flex: 1 0;
