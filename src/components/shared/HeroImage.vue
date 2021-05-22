@@ -78,6 +78,11 @@ export default {
       width: 23rem;
     }
   }
+
+  @include respond(tab-land) {
+    padding: 6rem 2.5rem;
+  }
+
   &__heading {
     font-size: 2.5rem;
     margin-bottom: 2rem;
@@ -85,12 +90,21 @@ export default {
     &--small {
       font-size: 1.75rem;
     }
+    @include respond(tab-land) {
+      font-size: 4.5rem;
+      width: 32rem;
+      line-height: 4.5rem;
+    }
   }
 
   &__paragraph {
     font-size: 0.9375rem;
     line-height: 1.6rem;
     color: rgba($color-light-cream, 0.8);
+
+    @include respond(tab-land) {
+      width: 25rem;
+    }
   }
 }
 </style>

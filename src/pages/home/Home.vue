@@ -83,6 +83,7 @@ export default {
 .our-collection {
   @include flex-col-center;
   margin-top: 6rem;
+  position: relative;
 
   &__heading {
     font-size: 2.5rem;
@@ -91,6 +92,11 @@ export default {
       position: absolute;
       transform: translateY(1.5rem);
       z-index: -1;
+    }
+    @include respond(tab-land) {
+      font-size: 6rem;
+      padding: 2rem;
+      transform: translateY(0);
     }
     background: -webkit-linear-gradient(
       rgba($color-grey, 0.5),
@@ -102,11 +108,14 @@ export default {
   &__list {
     list-style: none;
     width: 100%;
+    @include respond(desktop) {
+      display: flex;
+      justify-content: space-between;
+      max-width: 64rem;
+    }
   }
   &__item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include flex-col-center;
   }
 }
 
