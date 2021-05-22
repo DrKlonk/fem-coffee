@@ -39,6 +39,9 @@ export default {
       margin-right: 1rem;
     }
   }
+  @include respond(desktop) {
+    min-height: 13rem;
+  }
   background-color: $color-big-selection;
   border-radius: $br-small;
   padding: 1.5rem;

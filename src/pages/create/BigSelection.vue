@@ -74,9 +74,11 @@ export default {
 
 <style lang="scss" scoped>
 .big-selection {
-  margin-top: 3rem;
   &:not(:last-child) {
     margin-bottom: 2rem;
+  }
+  &:not(:first-child) {
+    margin-top: 3rem;
   }
   &__header {
     display: flex;
@@ -89,6 +91,13 @@ export default {
     flex-basis: 15rem;
     color: $color-grey;
     font-size: 1.5rem;
+
+    @include respond(tab-land) {
+      flex-grow: 1;
+    }
+    @include respond(desktop) {
+      font-size: 2.5rem;
+    }
   }
 
   &__caret {

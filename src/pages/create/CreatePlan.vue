@@ -29,12 +29,12 @@
         @option-selected="optionSelected"
         :disabled="determineDisabled(selection.category)"
       />
+      <section class="order-summary">
+        <h4 class="order-summary__heading">Order summary</h4>
+        <p class="order-summary__paragraph" v-html="orderSummary"></p>
+      </section>
     </section>
   </div>
-  <section class="order-summary">
-    <h4 class="order-summary__heading">Order summary</h4>
-    <p class="order-summary__paragraph" v-html="orderSummary"></p>
-  </section>
 
   <div class="order-button">
     <app-button
@@ -222,5 +222,8 @@ export default {
   margin-top: 3rem;
   display: flex;
   justify-content: center;
+  @include respond(desktop) {
+    justify-content: flex-end;
+  }
 }
 </style>
