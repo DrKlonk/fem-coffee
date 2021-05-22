@@ -61,7 +61,10 @@ I revamped my Vue knowledge a bit. I also found out how to make the order form w
 
 Responsive imagery:
 
-- In about us, I use a global variable of window width to determine which image to show. Funky, but works. It does have the values hard-coded in the template, which is a downside.
+- In about us, I use a global variable of window width to determine which image to show for the Commitment section. Funky, but works. It does have the values hard-coded in the template, which is a downside.
+
+- I also used the `<picture>` with different `<source>` elements on that page for the quality statement. This seems to be more the standard and keeps it nice and concise. It also uses hard coded widths, though.
+
 - In HeroImage, I use a background image based on media queries. It allows for passing of a class to the component, on which it decides which image to use. However, it does not make the component ignorant of the image used, which makes it not-so-flexible.
 
 I tried doing it with `<img srcset>`, but I didn't manage to get that working.

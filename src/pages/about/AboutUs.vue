@@ -50,18 +50,32 @@
   </section>
 
   <section class="quality-statement">
-    <img
-      class="image quality-statement__image"
-      src="@/assets/about/mobile/image-quality.jpg"
-    />
-    <h3 class="quality-statement__heading">Uncompromising quality</h3>
-    <p class="quality-statement__paragraph">
-      Although we work with growers who pay close attention to all stages of
-      harvest and processing, we employ, on our end, a rigorous quality control
-      program to avoid over-roasting or baking the coffee dry. Every bag of
-      coffee is tagged with a roast date and batch number. Our goal is to roast
-      consistent, user-friendly coffee, so that brewing is easy and enjoyable.
-    </p>
+    <picture class="quality-statement__image-box">
+      <source
+        media="(min-width: 1200px)"
+        srcset="@/assets/about/desktop/image-quality.jpg"
+      />
+      <source
+        media="(min-width: 600px)"
+        srcset="@/assets/about/tablet/image-quality.jpg"
+      />
+      <img
+        alt="A cup of coffee"
+        class="image quality-statement__image"
+        src="@/assets/about/mobile/image-quality.jpg"
+      />
+    </picture>
+    <div class="quality-statement__text-container">
+      <h3 class="quality-statement__heading">Uncompromising quality</h3>
+      <p class="quality-statement__paragraph">
+        Although we work with growers who pay close attention to all stages of
+        harvest and processing, we employ, on our end, a rigorous quality
+        control program to avoid over-roasting or baking the coffee dry. Every
+        bag of coffee is tagged with a roast date and batch number. Our goal is
+        to roast consistent, user-friendly coffee, so that brewing is easy and
+        enjoyable.
+      </p>
+    </div>
   </section>
 
   <section class="our-headquarters">
@@ -138,7 +152,7 @@ export default {
 }
 
 .quality-statement {
-  padding: 8rem 1.5rem 2rem 1.5rem;
+  padding: 0 1.5rem 2rem 1.5rem;
   margin-top: 15rem;
   background-color: $color-dark-grey-blue;
   text-align: center;
@@ -146,24 +160,58 @@ export default {
   position: relative;
   border-radius: $br-large;
   z-index: -2;
+  @include flex-col-center;
 
   @include respond(tab-port) {
-    padding: 14rem 4.5rem 3rem 4.5rem;
+    padding: 0 4.5rem 3rem 4.5rem;
     margin-top: 20rem;
   }
 
-  &__image {
-    position: absolute;
-    left: 1.5rem;
-    top: 0;
-    width: calc(100% - 3rem);
-    transform: translateY(-50%);
-    z-index: -1;
+  @include respond(desktop) {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    padding: 0 4.5rem 0 4.5rem;
   }
+
+  &__image-box {
+    width: min(100%, 24rem);
+    transform: translateY(-50%);
+    @include respond(tab-port) {
+      width: max(calc(100%), 26rem);
+    }
+    @include respond(desktop) {
+      transform: translateY(-20%);
+      width: 20rem;
+    }
+  }
+
   &__heading {
+    margin-top: -3rem;
+    @include respond(tab-port) {
+      margin-top: -6rem;
+    }
+    @include respond(tab-land) {
+      margin-top: -10rem;
+    }
+    @include respond(desktop) {
+      margin-top: 0;
+      text-align: left;
+    }
   }
   &__paragraph {
     margin-top: 2rem;
+    @include respond(desktop) {
+      text-align: left;
+    }
+  }
+  &__text-container {
+    max-width: 30rem;
+    @include respond(tab-port) {
+      max-width: 40rem;
+    }
+    @include respond(desktop) {
+      max-width: 28rem;
+    }
   }
 }
 .our-headquarters {
