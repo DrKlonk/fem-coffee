@@ -46,6 +46,10 @@ export default {
   }
   &__paragraph {
     margin-top: 2rem;
+
+    @include respond(desktop) {
+      max-width: 18rem;
+    }
   }
 }
 .dark {

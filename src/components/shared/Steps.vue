@@ -38,6 +38,9 @@ export default {
   @include respond(tab-port) {
     &:not(:last-of-type) {
       margin-right: 2rem;
+      @include respond(desktop) {
+        margin-right: 4rem;
+      }
 
       .step__line {
         position: absolute;

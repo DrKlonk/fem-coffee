@@ -160,6 +160,18 @@ export default {
   }
   &__list {
     list-style: none;
+    @include respond(tab-land) {
+      @include flex-col-center;
+      margin: 0 auto;
+      max-width: 40rem;
+    }
+    @include respond(desktop) {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: stretch;
+      max-width: 60rem;
+    }
   }
 }
 

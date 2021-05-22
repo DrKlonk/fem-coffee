@@ -42,10 +42,17 @@ export default {
     flex-direction: row;
     align-items: center;
   }
+  @include respond(desktop) {
+    flex-direction: column;
+    max-width: 18rem;
+  }
 
   &__icon {
     @include respond(tab-port) {
       padding: 1rem 2rem;
+    }
+    @include respond(desktop) {
+      min-height: 7rem;
     }
   }
 
@@ -55,10 +62,18 @@ export default {
       margin-bottom: 1rem;
       text-align: left;
     }
+
+    @include respond(desktop) {
+      font-size: 1.5rem;
+      text-align: center;
+    }
   }
   &__paragraph {
     @include respond(tab-port) {
       text-align: left;
+    }
+    @include respond(desktop) {
+      text-align: center;
     }
   }
 }
