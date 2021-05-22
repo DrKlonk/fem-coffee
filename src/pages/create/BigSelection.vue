@@ -1,5 +1,5 @@
 <template>
-  <div class="big-selection" :class="{ disabled: disabled }">
+  <div class="big-selection" :id="link" :class="{ disabled: disabled }">
     <header class="big-selection__header" @click="toggleCollapsed">
       <h4 class="big-selection__question">
         {{ selection.question }}
@@ -48,6 +48,9 @@ export default {
       type: Boolean,
       default: false,
     },
+    link: {
+      type: String,
+    },
   },
   methods: {
     emitSelectedOption(e) {
@@ -74,6 +77,14 @@ export default {
 
 <style lang="scss" scoped>
 .big-selection {
+  // this element is needed to cancel the header when clicking on the links
+  &::before {
+    display: block;
+    content: " ";
+    margin-top: -7rem;
+    height: 7rem;
+    visibility: hidden;
+  }
   &:not(:last-child) {
     margin-bottom: 2rem;
   }

@@ -16,8 +16,12 @@
           :key="item.id"
           class="order-menu__item"
         >
-          <span class="order-menu__number">{{ item.number }}</span>
-          <span class="order-menu__text">{{ item.text }}</span>
+          <span
+            class="order-menu__number"
+            :class="{ complete: isFieldComplete(item.id) }"
+            >{{ item.number }}</span
+          >
+          <a class="order-menu__text" :href="`#${item.id}`">{{ item.text }}</a>
         </li>
       </ol>
     </div>
@@ -28,6 +32,7 @@
         :selection="selection"
         @option-selected="optionSelected"
         :disabled="determineDisabled(selection.category)"
+        :link="selection.category"
       />
       <section class="order-summary">
         <h4 class="order-summary__heading">Order summary</h4>
@@ -100,6 +105,9 @@ export default {
     logOrder() {
       console.log("order logged!")
     },
+    isFieldComplete(field) {
+      return this.order[field] !== null
+    },
   },
   computed: {
     orderSummary() {
@@ -146,7 +154,7 @@ export default {
     isOrderComplete() {
       const mandatoryFields = ["method", "type", "amount", "delivery"]
       const areMandatoryFieldsPresent = mandatoryFields.every((field) => {
-        return this.order[field] != null
+        return this.isFieldComplete(field)
       })
       if (!areMandatoryFieldsPresent) {
         return false
@@ -187,6 +195,9 @@ export default {
   &__number {
     display: inline-block;
     width: 4rem;
+    &.complete {
+      color: $color-cyan;
+    }
   }
 }
 .order {
