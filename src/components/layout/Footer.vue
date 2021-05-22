@@ -59,8 +59,16 @@ export default {
   margin-bottom: 3rem;
   padding: 2rem;
   @include flex-col-center;
+  @include respond(desktop) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
   &__logo {
     margin-top: 2rem;
+    @include respond(desktop) {
+      margin: 0;
+    }
   }
 
   &__links {
@@ -71,6 +79,9 @@ export default {
       width: 20rem;
       flex-direction: row;
       justify-content: space-between;
+    }
+    @include respond(desktop) {
+      margin: 0;
     }
   }
   &__link-element {
@@ -83,6 +94,9 @@ export default {
     display: flex;
     justify-content: space-between;
     width: 9rem;
+    @include respond(desktop) {
+      margin: 0;
+    }
   }
 }
 .router-link {
