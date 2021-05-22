@@ -40,17 +40,26 @@ export default {
   @include respond(tab-port) {
     background-image: url("~@/assets/home/tablet/image-hero-coffeepress.jpg");
   }
+  @include respond(tab-land) {
+    background-image: url("~@/assets/home/desktop/image-hero-coffeepress.jpg");
+  }
 }
 .about {
   background-image: url("~@/assets/about/mobile/image-hero-whitecup.jpg");
   @include respond(tab-port) {
     background-image: url("~@/assets/about/tablet/image-hero-whitecup.jpg");
   }
+  @include respond(desktop) {
+    background-image: url("~@/assets/about/desktop/image-hero-whitecup.jpg");
+  }
 }
 .create-plan {
   background-image: url("~@/assets/plan/mobile/image-hero-blackcup.jpg");
   @include respond(tab-port) {
     background-image: url("~@/assets/plan/tablet/image-hero-blackcup.jpg");
+  }
+  @include respond(desktop) {
+    background-image: url("~@/assets/plan/desktop/image-hero-blackcup.jpg");
   }
 }
 .hero-image {
