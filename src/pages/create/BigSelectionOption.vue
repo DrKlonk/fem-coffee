@@ -32,6 +32,7 @@ export default {
 
 <style lang="scss" scoped>
 .option {
+  cursor: pointer;
   &:not(:last-child) {
     margin-bottom: 1rem;
     @include respond(tab-port) {
@@ -54,7 +55,7 @@ export default {
     margin-top: 1rem;
   }
 }
-.selected {
+.selected.selected.selected {
   background-color: $color-cyan;
   color: $color-light-cream;
 }
