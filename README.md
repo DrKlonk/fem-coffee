@@ -59,6 +59,13 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 I revamped my Vue knowledge a bit. I also found out how to make the order form work without it being a form.
 
+Responsive imagery:
+
+- In about us, I use a global variable of window width to determine which image to show. Funky, but works. It does have the values hard-coded in the template, which is a downside.
+- In HeroImage, I use a background image based on media queries. It allows for passing of a class to the component, on which it decides which image to use. However, it does not make the component ignorant of the image used, which makes it not-so-flexible.
+
+I tried doing it with `<img srcset>`, but I didn't manage to get that working.
+
 To see how you can add code snippets, see below:
 
 ```html
