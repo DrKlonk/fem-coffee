@@ -106,13 +106,13 @@ export default {
   font-size: 0.875rem;
   font-weight: 700;
   letter-spacing: 0.0625rem;
+  color: $color-grey;
 
-  &:visited {
-    color: $color-grey;
-  }
   &:hover,
-  &:focus,
-  &:active {
+  &:focus {
+    color: #fff;
+  }
+  &-active {
     color: $color-pale-orange;
   }
 }
