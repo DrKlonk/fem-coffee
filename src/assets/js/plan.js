@@ -94,6 +94,34 @@ export const orderSelections = [
   },
 ]
 
+export const orderMenu = [
+  {
+    id: "method",
+    number: "01",
+    text: "Preferences",
+  },
+  {
+    id: "type",
+    number: "02",
+    text: "Bean Type",
+  },
+  {
+    id: "amount",
+    number: "03",
+    text: "Quantity",
+  },
+  {
+    id: "grind",
+    number: "04",
+    text: "Grind Option",
+  },
+  {
+    id: "delivery",
+    number: "05",
+    text: "Deliveries",
+  },
+]
+
 export const pricingTable = {
   "250g": {
     "Every week": "$7.20",

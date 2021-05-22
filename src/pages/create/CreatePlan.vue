@@ -8,15 +8,29 @@
     >
   </HeroImage>
   <Steps :dark-mode="true" />
-  <section class="order">
-    <big-selection
-      v-for="selection in localOrderSelections"
-      :key="selection.category"
-      :selection="selection"
-      @option-selected="optionSelected"
-      :disabled="determineDisabled(selection.category)"
-    />
-  </section>
+  <div class="order-container">
+    <div v-if="$windowWidth >= 1200" class="order-menu">
+      <ol class="order-menu__list">
+        <li
+          v-for="item in localOrderMenu"
+          :key="item.id"
+          class="order-menu__item"
+        >
+          <span class="order-menu__number">{{ item.number }}</span>
+          <span class="order-menu__text">{{ item.text }}</span>
+        </li>
+      </ol>
+    </div>
+    <section class="order">
+      <big-selection
+        v-for="selection in localOrderSelections"
+        :key="selection.category"
+        :selection="selection"
+        @option-selected="optionSelected"
+        :disabled="determineDisabled(selection.category)"
+      />
+    </section>
+  </div>
   <section class="order-summary">
     <h4 class="order-summary__heading">Order summary</h4>
     <p class="order-summary__paragraph" v-html="orderSummary"></p>
@@ -58,7 +72,7 @@ import BigSelection from "./BigSelection.vue"
 import HeroImage from "@/components/shared/HeroImage"
 import Modal from "@/components/ui/Modal.vue"
 import Steps from "@/components/shared/Steps.vue"
-import { orderSelections, pricingTable } from "@/assets/js/plan.js"
+import { orderSelections, orderMenu, pricingTable } from "@/assets/js/plan.js"
 
 export default {
   data() {
@@ -71,6 +85,7 @@ export default {
         delivery: null,
       },
       localOrderSelections: orderSelections,
+      localOrderMenu: orderMenu,
     }
   },
   components: { HeroImage, Steps, BigSelection, AppButton, Modal },
@@ -149,6 +164,35 @@ export default {
 .steps {
   margin-top: 6rem;
 }
+.order-container {
+  margin-top: 4rem;
+  display: flex;
+}
+
+.order-menu {
+  flex: 0 0 24rem;
+  font-family: Fraunces, Georgia, "Times New Roman", Times, serif;
+  font-size: 1.5rem;
+  color: rgba($color-dark-grey-blue, 0.5);
+  &__list {
+    list-style: none;
+    margin-right: 6rem;
+  }
+  &__item {
+    padding: 1rem;
+    &:not(:last-child) {
+      border-bottom: 1px rgba($color-grey, 0.5) solid;
+    }
+  }
+  &__number {
+    display: inline-block;
+    width: 4rem;
+  }
+}
+.order {
+  flex: 1 0;
+}
+
 .order-summary {
   background-color: $color-dark-grey-blue;
   padding: 1.5rem;

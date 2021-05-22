@@ -50,6 +50,9 @@ export default {
         left: 1rem;
         background: $color-pale-orange;
         z-index: -1;
+        @include respond(desktop) {
+          width: calc(100% + 4rem);
+        }
       }
     }
     .step__dot {
@@ -74,6 +77,11 @@ export default {
     padding: 8rem 3.5rem;
     margin-left: -3.5rem;
     margin-right: -3.5rem;
+  }
+  @include respond(desktop) {
+    padding: 8rem 3.5rem;
+    margin-left: 0;
+    margin-right: 0;
   }
   .step-item {
     .step__dot {
