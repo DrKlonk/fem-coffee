@@ -61,9 +61,26 @@ export default {
     }
   }
 }
-.dark {
+.steps.dark {
   background-color: $color-dark-grey-blue;
   border-radius: $br-large;
-  padding: 3rem 0;
+  padding: 3rem 1.5rem;
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+  @include respond(tab-port) {
+    padding: 8rem 3.5rem;
+    margin-left: -3.5rem;
+    margin-right: -3.5rem;
+  }
+  .step-item {
+    .step__dot {
+      background: transparent;
+      z-index: 2;
+    }
+    .step__line {
+      background-color: $color-pale-orange;
+      z-index: 1;
+    }
+  }
 }
 </style>
