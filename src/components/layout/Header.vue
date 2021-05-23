@@ -60,7 +60,7 @@ export default {
   padding: 1.5rem;
   background-color: #fff;
   z-index: 100;
-  @include respond(tab-land) {
+  @include respond(tab-port) {
     padding: 3.5rem;
   }
 }
