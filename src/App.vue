@@ -31,4 +31,8 @@ export default {
 .main {
   margin-top: 6rem;
 }
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 </style>

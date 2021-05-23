@@ -49,19 +49,19 @@ export default {
 
 <style lang="scss" scoped>
 .header {
-  position: fixed;
+  position: sticky;
   left: 0;
   top: 0;
-  width: 100vw;
-  height: 6rem;
+  width: calc(100%+7rem);
+  padding: 3rem 3.5rem;
+  margin-left: -3.5rem;
+  margin-right: -3.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem;
   background-color: #fff;
   z-index: 100;
   @include respond(tab-port) {
-    padding: 3.5rem;
   }
 }
 .logo {
