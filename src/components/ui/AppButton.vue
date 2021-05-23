@@ -29,6 +29,10 @@ export default {
   border-radius: 0.375rem;
   color: $color-light-cream;
   cursor: pointer;
+  &:focus {
+    outline: dotted $color-light-cream 2px;
+    outline-offset: -2px;
+  }
   &:hover {
     background-color: $color-cyan-secondary;
   }

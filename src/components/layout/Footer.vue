@@ -1,6 +1,6 @@
 <template>
   <footer class="footer">
-    <router-link :to="{ name: 'Home' }">
+    <router-link class="logo-router-link" :to="{ name: 'Home' }">
       <img
         src="@/assets/shared/desktop/logo-white.svg"
         class="footer__logo"
@@ -22,22 +22,28 @@
 
     <ul class="footer__socials">
       <li class="facebook">
-        <img
-          class="social-icon"
-          src="~@/assets/shared/desktop/icon-facebook.svg"
-        />
+        <a href="#" class="social-link">
+          <img
+            class="social-icon"
+            src="~@/assets/shared/desktop/icon-facebook.svg"
+          />
+        </a>
       </li>
       <li class="twitter">
-        <img
-          class="social-icon"
-          src="~@/assets/shared/desktop/icon-twitter.svg"
-        />
+        <a href="#" class="social-link">
+          <img
+            class="social-icon"
+            src="~@/assets/shared/desktop/icon-twitter.svg"
+          />
+        </a>
       </li>
       <li class="instagram">
-        <img
-          class="social-icon"
-          src="~@/assets/shared/desktop/icon-instagram.svg"
-        />
+        <a href="#" class="social-link">
+          <img
+            class="social-icon"
+            src="~@/assets/shared/desktop/icon-instagram.svg"
+          />
+        </a>
       </li>
     </ul>
   </footer>
@@ -108,6 +114,10 @@ export default {
   letter-spacing: 0.0625rem;
   color: $color-grey;
 
+  &:focus {
+    outline: dotted $color-light-cream 2px;
+    outline-offset: 0.25rem;
+  }
   &:hover,
   &:focus {
     color: #fff;
@@ -116,8 +126,19 @@ export default {
     color: $color-pale-orange;
   }
 }
-
+.logo-router-link {
+  &:focus {
+    outline: dotted $color-light-cream 2px;
+    outline-offset: 0.25rem;
+  }
+}
 .social-icon {
   width: 2rem;
+}
+.social-link {
+  &:focus {
+    outline: dotted $color-light-cream 2px;
+    outline-offset: 0.25rem;
+  }
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <header class="header">
-    <router-link :to="{ name: 'Home' }">
+    <router-link class="logo-router-link" :to="{ name: 'Home' }">
       <img
         class="logo"
         alt="Coffeeroasters"
@@ -66,5 +66,11 @@ export default {
 }
 .logo {
   width: 10rem;
+}
+.logo-router-link {
+  &:focus {
+    outline: dotted $color-cyan 0.125rem;
+    outline-offset: 0.25rem;
+  }
 }
 </style>

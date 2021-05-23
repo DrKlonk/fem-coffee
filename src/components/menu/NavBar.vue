@@ -50,5 +50,9 @@ export default {
   &:hover {
     color: $color-dark-grey;
   }
+  &:focus {
+    outline: dotted $color-cyan 0.125rem;
+    outline-offset: -0.125rem;
+  }
 }
 </style>
