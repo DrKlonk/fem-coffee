@@ -23,26 +23,33 @@
     <ul class="footer__socials">
       <li class="facebook">
         <a href="#" class="social-link">
-          <img
-            class="social-icon"
-            src="~@/assets/shared/desktop/icon-facebook.svg"
-          />
+          <!-- Please refer: https://github.com/shubhamjain/svg-loader -->
+          <svg
+            data-src="https://s2.svgbox.net/social.svg?ic=facebook"
+            width="32"
+            height="32"
+            fill="#fff"
+          ></svg>
         </a>
       </li>
       <li class="twitter">
         <a href="#" class="social-link">
-          <img
-            class="social-icon"
-            src="~@/assets/shared/desktop/icon-twitter.svg"
-          />
+          <svg
+            data-src="https://s2.svgbox.net/social.svg?ic=twitter"
+            width="32"
+            height="32"
+            fill="#fff"
+          ></svg>
         </a>
       </li>
       <li class="instagram">
         <a href="#" class="social-link">
-          <img
-            class="social-icon"
-            src="~@/assets/shared/desktop/icon-instagram.svg"
-          />
+          <svg
+            data-src="https://s2.svgbox.net/social.svg?ic=instagram"
+            width="32"
+            height="32"
+            fill="#fff"
+          ></svg>
         </a>
       </li>
     </ul>
@@ -139,6 +146,9 @@ export default {
   &:focus {
     outline: dotted $color-light-cream 2px;
     outline-offset: 0.25rem;
+    svg {
+      fill: $color-pale-orange;
+    }
   }
 }
 </style>
