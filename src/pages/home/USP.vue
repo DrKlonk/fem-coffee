@@ -3,7 +3,7 @@
     <img
       class="usp__icon"
       :src="require(`@/assets/home/desktop/icon-${usp.img}.svg`)"
-      :alt="usp.img"
+      alt=""
     />
     <div class="usp__text-container">
       <h3 class="usp__heading">

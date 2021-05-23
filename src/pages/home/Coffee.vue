@@ -3,7 +3,7 @@
     <img
       class="coffee__image"
       :src="require(`@/assets/home/desktop/image-${coffee.img}.png`)"
-      :alt="coffee.img"
+      alt=""
     />
     <div class="coffee__text-container">
       <h3 class="coffee__title">{{ coffee.title }}</h3>
